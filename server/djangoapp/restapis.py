@@ -83,7 +83,9 @@ def get_dealer_by_id_from_cf(url, id):
 def get_dealer_reviews_from_cf(url, **kwargs):
     results = []
     id = kwargs.get("id")
-    json_result = get_request(url, id=id)
+    json_result = get_request(url, dealerId=id)
+    print("dealerId ", id)
+    print('json_result from line 86',json_result)
     if json_result:
         reviews = json_result["data"]["docs"]
         for review in reviews:
@@ -108,8 +110,8 @@ def get_dealer_reviews_from_cf(url, **kwargs):
 # - Call get_request() with specified arguments
 # - Get the returned sentiment label such as Positive or Negative
 def analyze_review_sentiments(text):
-    url = "https://api.eu-gb.natural-language-understanding.watson.cloud.ibm.com/instances/158a171c-2213-4f2c-857d-33e0100a4884"
-    api_key = "vQMXDyAi0A3ybcenyUE6Ej4EVpRO2W6f-J_SeID8SKe-"
+    url = "https://api.eu-gb.natural-language-understanding.watson.cloud.ibm.com/instances/da1da9a7-ee4b-4909-a16d-14b4d0d803ab"
+    api_key = "jxEaCquHJ40dYyIGh_n67FCd6jU_dIJPAR-N4jfIq2dz"
     authenticator = IAMAuthenticator(api_key)
     natural_language_understanding = NaturalLanguageUnderstandingV1(version='2021-08-01',authenticator=authenticator)
     natural_language_understanding.set_service_url(url)
