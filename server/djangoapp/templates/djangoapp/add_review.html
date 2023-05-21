@@ -11,6 +11,11 @@
 
 </head>
     <body>
+        <script type="text/javascript">
+            $('.date-own').datepicker({
+               format: 'mm/dd/yyyy'
+             });
+        </script>
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -73,7 +78,7 @@
         
                     <div class="mb-3">
                         <label for="purchasedate"><b>Select Your Purchase Date: </b></label>
-                        <input class="date-own form-control" style="width: 300px;" type="text" name="purchasedate" id="purchasedate">
+                        <input class="date-own form-control" style="width: 300px;" type="date" name="purchasedate" id="purchasedate">
                     </div>
         
               </div>
