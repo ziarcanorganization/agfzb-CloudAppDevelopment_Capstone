@@ -119,7 +119,7 @@ def get_dealer_details(request, id):
 # ...
 def add_review(request, id):
     context = {}
-    dealer_url = "https://us-south.functions.appdomain.cloud/api/v1/web/9ba477d3-3063-4ffb-a237-36d5ed7a09c8/dealership-package/get-dealership"
+    dealer_url = "https://us-south.functions.appdomain.cloud/api/v1/web/ModuleUs_my_space/dealership-package/get-dealership"
     dealer = get_dealer_by_id_from_cf(dealer_url, id=id)
     context["dealer"] = dealer
     if request.method == 'GET':
@@ -152,7 +152,7 @@ def add_review(request, id):
 
             new_payload = {}
             new_payload["review"] = payload
-            review_post_url = "https://us-south.functions.appdomain.cloud/api/v1/web/9ba477d3-3063-4ffb-a237-36d5ed7a09c8/dealership-package/post-review"
+            review_post_url = "https://us-south.functions.appdomain.cloud/api/v1/web/ModuleUs_my_space/dealership-package/post-review"
             post_request(review_post_url, new_payload, id=id)
         return redirect("djangoapp:dealer_details", id=id)
 
